@@ -17,7 +17,13 @@ returns { a: 1, c: 42};
 */
 
 function pluck(obj, elements) {
-  // YOUR CODE
+  let final = {};
+  elements.map((ele) => {
+    if (obj.hasOwnProperty(ele)) {
+      final[ele] = obj[ele];
+    }
+  });
+  return final;
 }
 
 module.exports = { pluck };
