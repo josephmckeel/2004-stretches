@@ -16,11 +16,10 @@ const lockBox = (code, msg) => {
     },
 
     revealMessage: function revealMessage(test) {
-      if (code !== test) {
+      if (final !== test) {
         throw new Error(message);
-      } else {
-        return message;
       }
+      return message;
     },
   };
 };
