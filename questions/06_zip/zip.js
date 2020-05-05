@@ -8,7 +8,12 @@ zip([
 */
 
 function zip(objs) {
-  // YOUR CODE
+  return objs.reduce((acc, item) => {
+    for (let prop in item) {
+      acc[prop] = acc[prop] + item[prop] || item[prop];
+    }
+    return acc;
+  }, {});
 }
 
 module.exports = { zip };
