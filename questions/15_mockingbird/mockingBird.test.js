@@ -83,7 +83,7 @@ describe("Learn how to write mock functions!", () => {
       const repeaterOutput = repeater(birdMock, numberOfRepeats);
 
       // the expected output will be an array of return values from birdMock.
-      const expectedOutput = [repeaterOutput];
+      const expectedOutput = [bird(numberOfRepeats)];
 
       // fill out expectedOutput using our mock return values
       birdMock.mock.results.forEach();
