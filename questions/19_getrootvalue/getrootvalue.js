@@ -19,6 +19,26 @@
 //getrootvalue(object,40)=>'one'
 //returns -1 if value isn't found
 
-const getrootvalue = () => {};
+const getrootvalue = (obj, val) => {
+  if (Array.isArray(obj) && obj.includes(val)) {
+    return "key";
+  } else if (Array.isArray(obj)) {
+    return;
+  }
+  for (const key in obj) {
+    for (const curr in obj[key]) {
+      if (Array.isArray(obj[key][curr]) && obj[key][curr].includes(val)) {
+        return key;
+      } else if (Array.isArray(obj[key][curr])) {
+        continue;
+      } else if (!Array.isArray(obj[key][curr])) {
+        if (getrootvalue(obj[key][curr], val) === "key") {
+          return key;
+        }
+      }
+    }
+  }
+  return null;
+};
 
 module.exports = { getrootvalue };
