@@ -17,7 +17,7 @@
 
 //   arr1 = [...new1];
 //   arr2 = [...new2];
-// };
+// }; need to swap the two arrays
 
 const arrayexchange = (arr1, arr2) => {
   if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
