@@ -1,17 +1,17 @@
-const { moveZeroes } = require('./moveZeroes');
+const { moveZeroes } = require("./moveZeroes");
 
-describe('moveZeroes', () => {
-  test('It takes an array and returns an array.', () => {
+describe("moveZeroes", () => {
+  test("It takes an array and returns an array.", () => {
     const arr = [0, 2, 3];
     const result = moveZeroes(arr);
     expect(Array.isArray(result)).toBe(true);
   });
-  test('It takes an array and returns the same array (mutates array in place).', () => {
+  test("It takes an array and returns the same array (mutates array in place).", () => {
     const arr = [0, 2, 3];
     const result = moveZeroes(arr);
     expect(arr === result).toBe(true);
   });
-  test('It moves the zeros in the array and moves them to the end.', () => {
+  test("It moves the zeros in the array and moves them to the end.", () => {
     const arr = [0, 0, 0, 1];
 
     moveZeroes(arr);
@@ -20,7 +20,7 @@ describe('moveZeroes', () => {
     expect(arr.indexOf(1)).toBe(0);
   });
 
-  test('It retains the order of the non-zero numbers in the array.', () => {
+  test("It retains the order of the non-zero numbers in the array.", () => {
     const arrTwo = [];
 
     const getRandomInt = (max) => {
@@ -34,9 +34,9 @@ describe('moveZeroes', () => {
     arrTwo[randomIdx] = 0;
     arrTwo[randomIdx + 1] = 0;
     const nextNum = arrTwo[randomIdx + 2];
-    console.log(arrTwo);
+    // console.log(arrTwo);
     const result = moveZeroes(arrTwo);
-    console.log(result);
+    // console.log(result);
     expect(arrTwo[randomIdx] !== 0).toBe(true);
     expect(arrTwo[randomIdx] === nextNum).toBe(true);
   });

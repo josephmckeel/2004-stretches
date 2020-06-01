@@ -19,8 +19,6 @@
 //getrootvalue(object,40)=>'one'
 //returns -1 if value isn't found
 
-make a variable and set key equal to that
-
 const getrootvalue = (obj, val) => {
   for (const key in obj) {
     for (const curr in obj[key]) {
@@ -29,7 +27,7 @@ const getrootvalue = (obj, val) => {
       } else if (Array.isArray(obj[key][curr])) {
         continue;
       } else if (!Array.isArray(obj[key][curr])) {
-        if (getrootvalue(obj[key][curr], val) === "key") {
+        if (getrootvalue(obj[key][curr], val) === key) {
           return key;
         }
       }
