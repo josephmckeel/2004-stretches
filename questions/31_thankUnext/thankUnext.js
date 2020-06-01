@@ -15,5 +15,11 @@
 // ****no test writing required on this stretch
 
 // YOUR CODE (intentionally blank):
+const count = 0;
+
+const next = () => {
+  count++;
+  return this[count];
+};
 
 // no export statement required
