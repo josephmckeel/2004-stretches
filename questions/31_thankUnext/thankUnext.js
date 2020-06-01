@@ -15,11 +15,17 @@
 // ****no test writing required on this stretch
 
 // YOUR CODE (intentionally blank):
-const count = 0;
+Array.prototype.next = function () {
+  if (!this.count) {
+    this.count = 0;
+  }
+  console.log(this[this.count]);
+  this.count++;
 
-const next = () => {
-  count++;
-  return this[count];
+  if (this.count >= this.length) {
+    this.count = 0;
+  }
+  return this;
 };
 
 // no export statement required
