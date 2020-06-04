@@ -12,10 +12,16 @@
 
 const directory = (obj) => {
   const final = {};
-  for (let key in obj) {
-    if (typeof obj[key] !== "object") {
+
+  const func = (curr, next) => {
+    if (typeof curr !== "object" || Array.isArray(curr)) {
+      return (final[next] = curr);
     }
-  }
+    for (let key in curr) {
+      func(curr[key], next ? next + "/" + key : key);
+    }
+  };
+  func(obj, "");
 
   return final;
 };

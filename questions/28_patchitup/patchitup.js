@@ -7,3 +7,17 @@
 // - Also NB: repl.it doesn't let you monkey patch! but the chrome console does.
 
 //code goes here
+Array.prototype.countBy = function (fun) {
+  return this.reduce((a, b) => {
+    if (fun) {
+      b = fun(b);
+    }
+    if (a[b]) {
+      a[b]++;
+      return a;
+    } else {
+      a[b] = 1;
+      return a;
+    }
+  }, {});
+};

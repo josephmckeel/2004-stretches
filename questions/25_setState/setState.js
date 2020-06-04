@@ -5,9 +5,21 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
+    this.history = [];
   }
-  setState() {
-    // YOUR CODE
+  setState(newState) {
+    this.history.push(this.state);
+    let key = Object.keys(newState)[0];
+    let val = newState[key];
+    return Object.keys(this.state).reduce((a, b) => {
+      if (b === key) {
+        a[b] = val;
+        return a;
+      } else {
+        a[b] = this.state[b];
+        return a;
+      }
+    }, {});
   }
 }
 
