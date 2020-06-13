@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const decypher = (str) => {
   const arr = str.split("");
   const nums = [];
@@ -16,9 +16,5 @@ const decypher = (str) => {
   const result = nums.reverse().join("").fromCharCode() + str[str.length - 1];
 
   return result.concat(second);
-=======
-const decypher = () => {
-  //YOUR CODE HERE
->>>>>>> bdfb2fba8099ed0a786627731280c072cd4a15a0
-};
+
 module.exports = { decypher };
