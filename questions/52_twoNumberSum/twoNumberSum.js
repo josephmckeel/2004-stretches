@@ -5,8 +5,22 @@
 
 //***Your solution should NOT include nested loops of any type***
 
-const twoNumberSum = () => {
+const twoNumberSum = (arr, tar) => {
   //write code here
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    const check = tar - arr[i];
+    const find = arr.includes(check);
+    if (find) {
+      result.push(check);
+      result.push(arr[i]);
+      console.log(result);
+      return result;
+    }
+  }
+  if (result.length === 0) {
+    return null;
+  }
 };
 
 module.exports = { twoNumberSum };
